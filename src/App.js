@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { CssBaseline, makeStyles } from '@material-ui/core'
+import React from 'react'
+import Header from './components/Header'
+import PlaceToVisit from './components/PlaceToVisit'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const useStyles = makeStyles((theme) => ({
+  root: {
+    minHeight: '100vh',
+    backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/montain2.jpg'})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover'
+  }
+}))
+
+const App = () => {
+  const classes = useStyles()
+  return(
+   <div className={classes.root}>
+     <CssBaseline />
+     <Header />
+     <PlaceToVisit />
+   </div> 
+  )
 }
 
-export default App;
+export default App
